@@ -44,6 +44,3 @@ fun main() {
     println(Gioco.printResult(userChoice,gameChoice))
    
 }
-Open in Playground →
-Target: JVM
-Running on v.1.6.10
