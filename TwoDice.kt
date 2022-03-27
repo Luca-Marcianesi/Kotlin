@@ -11,8 +11,8 @@ class MainActivity : AppCompatActivity() {
 
     var dice = Dice(6)
 
-    lateinit var immageDice1 : ImageView
-    lateinit var immageDice2 : ImageView
+    lateinit var imageDice1 : ImageView
+    lateinit var imageDice2 : ImageView
 
 
     var valueResult : Int = 2
@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         val binding : ActivityMainBinding = DataBindingUtil.setContentView(
             this, R.layout.activity_main)
 
-        immageDice1 = binding.firstDice
-        immageDice2 = binding.secondDice
+        imageDice1 = binding.firstDice
+        imageDice2 = binding.secondDice
         resultView = binding.textResult
         resultView.text = valueResult.toString()
 
@@ -37,21 +37,21 @@ class MainActivity : AppCompatActivity() {
         val resultDice1 : Int = dice.roll()
         val resultDice2  : Int = dice.roll()
         resultView.text = (resultDice1 + resultDice2).toString()
-        setImmage(resultDice1,immageDice1)
-        setImmage(resultDice2,immageDice2)
-        
+        setImage(resultDice1,imageDice1)
+        setImage(resultDice2,imageDice2)
+
         }
 
     }
 
-    fun setImmage(result : Int , immageSpace : ImageView){
+    fun setImage(result : Int , imageSpace : ImageView){
         when (result){
-            1-> changeImmage(R.drawable.dice_1 , immageSpace)
-            2-> changeImmage(R.drawable.dice_2 , immageSpace)
-            3-> changeImmage(R.drawable.dice_3 , immageSpace)
-            4-> changeImmage(R.drawable.dice_4 , immageSpace)
-            5-> changeImmage(R.drawable.dice_5 , immageSpace)
-            6-> changeImmage(R.drawable.dice_6 , immageSpace)
+            1-> changeImmage(R.drawable.dice_1 , imageSpace)
+            2-> changeImmage(R.drawable.dice_2 , imageSpace)
+            3-> changeImmage(R.drawable.dice_3 , imageSpace)
+            4-> changeImmage(R.drawable.dice_4 , imageSpace)
+            5-> changeImmage(R.drawable.dice_5 , imageSpace)
+            6-> changeImmage(R.drawable.dice_6 , imageSpace)
 
     }
 
