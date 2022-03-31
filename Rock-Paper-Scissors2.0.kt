@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         userPlay = binding.textChoiceUser
         computerPlay = binding.textChoiceComputer
 
-        userPlay.text = "Hai Giocato :"
-        computerPlay.text = "Il computer gioca :"
+        userPlay.text = getString(R.string.textUser)
+        computerPlay.text = getString(R.string.textComputer)
 
     }
 
@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
     fun playScissors(v : View){
         val gameChoice : Option = Gioco.getGameChoice()
         updateView(Gioco.result(Option.Forbice,gameChoice),Option.Forbice,gameChoice)
-
     }
 
     fun updateView(gameResult : Int, userPlay : Option , computerPlay : Option){
@@ -69,37 +68,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun updatePlay(userChoice : Option , computerChoice : Option){
-        userPlay.text = "Hai Giocato $userChoice"
-        computerPlay.text = "Il computer gioca $computerChoice"
-
+        userPlay.text =  getString(R.string.textUser) + userChoice
+        computerPlay.text = getString(R.string.textComputer) + computerChoice
     }
 
     fun updateScore(){
         totUser.text = userPoint.toString()
         totComputer.text = computerPoint.toString()
-
     }
 
     fun updateColor(){
         if(computerPoint > userPoint){
             totComputer.setTextColor(Color.GREEN)
             totUser.setTextColor(Color.RED)
-
         }
         else if(computerPoint < userPoint){
             totComputer.setTextColor(Color.RED)
             totUser.setTextColor(Color.GREEN)
-
         }
         else {
-            totComputer.setTextColor(Color.YELLOW)
-            totUser.setTextColor(Color.YELLOW)
-
+            totComputer.setTextColor(Color.BLACK)
+            totUser.setTextColor(Color.BLACK)
         }
     }
-
-
-
 
     enum class Option{Sasso , Carta , Forbice }
 
@@ -126,9 +117,6 @@ class MainActivity : AppCompatActivity() {
             }
             return 100
         }
-
     }
-
-
 }
 
